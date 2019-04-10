@@ -72,5 +72,9 @@ Route::resource('roles', 'RolesController');
 Route::resource('permisos', 'PermisosController');
 
 
-Route::resource('algo', 'PermisosController');
+Route::resource('nuevaruta____no', 'PermisosController');
 
+Route::get('roles/list', 'RolController@list');
+Route::get('roles/create', function () {
+    return view('roles/create');
+});
