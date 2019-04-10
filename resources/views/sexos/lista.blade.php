@@ -8,7 +8,7 @@
 
 <a href="{{ url('') }}" type="button" class="btn btn-warning">Regresar</a>
     <div class="card-header bg-info">
-    Lista de sexo
+    <h1> Lista de sexo </h1>
   </div>
     <table class="table table-bordered" id="laravel_crud">
         <thead>
