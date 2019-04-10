@@ -33,7 +33,7 @@
                <td>
                 @csrf()
                 @method('DELETE')
-                <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger">Eliminar</a>
+                <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger">Delete</a>
                 </form>
             </td>
         </tr>
