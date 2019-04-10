@@ -29,23 +29,6 @@ Route::post('cargos', 'CargoController@store');
 Route::patch('cargos/{cargo}', 'CargoController@update');
 Route::post('cargos/{cargo}', 'CargoController@create');
 Route::delete('cargos/{cargo}', 'CargoController@destroy');
-
-// Route::get('entidades/edit/{entidad}', 'EntidadController@edit');
-// Route::get('entidades/list', 'EntidadController@list');
-// Route::get('entidades/create', function () {
-//     $sexos = Sexo::all();
-//     $entidades = Entidad::all();
-
-//     return view('entidades/create', ['sexos' => $sexos, 'entidades' => $entidades]);
-// });
-
-// Route::get('entidades', 'EntidadController@index');
-// Route::get('entidades/{entidad}', 'EntidadController@show');
-// Route::post('entidades', 'EntidadController@store');
-// Route::patch('entidades/{entidad}', 'EntidadController@update');
-// Route::post('entidades/{entidad}', 'EntidadController@create');
-// Route::delete('entidades/{entidad}', 'EntidadController@destroy');
-
 Route::get('modulos/edit/{modulo}', 'ModuloController@edit');
 Route::get('modulos/list', 'ModuloController@list');
 Route::get('modulos/create', function () {
@@ -84,13 +67,10 @@ Route::post('tipoIncidencias', 'TipoIncidenciaController@store');
 Route::patch('tipoIncidencias/{tipo}', 'TipoIncidenciaController@update');
 Route::post('tipoIncidencias/{tipo}', 'TipoIncidenciaController@create');
 Route::delete('tipoIncidencias/{tipo}', 'TipoIncidenciaController@destroy');
-
-
 Route::get('perfiles', 'PerfilController@index');
-
-
-
 Route::resource('roles', 'RolesController');
 Route::resource('permisos', 'PermisosController');
 
-// Comentario
+
+Route::resource('algo', 'PermisosController');
+
