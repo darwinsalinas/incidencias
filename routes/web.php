@@ -72,5 +72,5 @@ Route::resource('roles', 'RolesController');
 Route::resource('permisos', 'PermisosController');
 
 
-Route::resource('nuevaruta', 'PermisosController');
+Route::resource('nuevaruta____no', 'PermisosController');
 
