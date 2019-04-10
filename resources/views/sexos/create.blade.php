@@ -4,6 +4,7 @@
 @section('content')
 
 <div class="col-sm">
+<h2>SEXOS</h2>
 <form action="{{url('sexos/lista')}}" method="POST" role="form">
       @csrf()
         <legend>Guardar sexo</legend>
