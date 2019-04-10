@@ -14,6 +14,11 @@ class CargoController extends Controller
      */
     public function index()
     {
+        // $qs = Cargo::latest()->paginate(5);
+
+        // return view('cargos.lista', compact('cargos'))
+        //     ->with('i', (request()->input('page', 1) -1) * 5);
+
         $qs = Cargo::all();
         return $qs;
     }
