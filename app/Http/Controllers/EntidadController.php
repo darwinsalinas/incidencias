@@ -6,6 +6,7 @@ use App\Entidad;
 use Illuminate\Http\Request;
 use App\Sexo;
 use App\Http\Requests\StoreEntidad;
+use App\Perfil;
 
 class EntidadController extends Controller
 {
@@ -16,7 +17,10 @@ class EntidadController extends Controller
      */
     public function index()
     {
-        $qs = Entidad::all();
+        $qs = Perfil::with([
+            'sexo',
+            'entidad'
+        ])->get();
 
         return $qs;
     }
@@ -28,9 +32,7 @@ class EntidadController extends Controller
      */
     public function create(Request $request)
     {
-        $sexos = Sexo::all();
-        $entidades = Entidad::all();
-        return view('entidades.create', compact('sexos', 'entidades'));
+        return view('entidades.create');
     }
 
     /**

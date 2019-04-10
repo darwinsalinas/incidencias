@@ -13,7 +13,9 @@
     <table class="table table-bordered" id="laravel_crud">
         <thead>
             <tr>
+                <th>Nombres</th>
                 <th>Entidad</th>
+                <th>Sexo</th>
                 <th>Fecha creada</th>
                 <th>Fecha actualizado</th>
                <th colspan="2"> <center>Opciones </center></th>
@@ -22,7 +24,9 @@
         <tbody>
             @foreach ($rs as $item)
         <tr>
-            <td>{{$item->entidad}}</td>
+            <td>{{$item->nombres}}</td>
+            <td>{{$item->entidad->entidad}}</td>
+            <td>{{$item->sexo->sexo}}</td>
             <td>{{$item->created_at}}</td>
             <td>{{$item->updated_at}}</td>
                 <td>
