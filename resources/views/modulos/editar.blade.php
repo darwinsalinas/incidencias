@@ -7,7 +7,7 @@
 @csrf()
 @method('PATCH')
 <div class="card-header">
-    <legend>Agregar módulo</legend>
+    <legend>Agregar MODULO</legend>
   </div>
     <div class="form-group">
         <label for="">Nombre del módulo</label>

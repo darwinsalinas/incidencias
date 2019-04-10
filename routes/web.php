@@ -81,3 +81,5 @@ Route::get('roles/create', function () {
 
 
 Route::get('conusltasroles', 'consultarolesController@index');
+Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
+
