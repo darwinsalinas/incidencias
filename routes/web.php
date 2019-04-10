@@ -74,3 +74,4 @@ Route::resource('permisos', 'PermisosController');
 
 Route::resource('algo', 'PermisosController');
 
+// FALTO UN PUNTO Y COMA
