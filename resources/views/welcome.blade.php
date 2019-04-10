@@ -88,7 +88,7 @@
                 <!-- <img src="asset/SDI.jpg" class="rounded mx-auto d-block" alt="Responsive image"> -->
 
                 <div class="links">
-                    <a href="entidades/list">Entidades</a>
+                    <a href="entidades/list">Entidades Editada Carlos</a>
                     <a href="cargos/list">Cargos</a>
                     <a href="modulos/list">Módulos</a>
                     <a href="sexos/list">Sexos</a>
