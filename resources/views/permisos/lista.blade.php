@@ -26,17 +26,14 @@
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="{{route('permisos.show', $item->id)}}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
                 <a href="{{route('permisos.create')}}" class="btn btn-secondary"><i class="fas fa-plus-circle"></i></a>
-                <a href="{{route('permisos.edit',$item)}}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                <div class="btn-group">
-                    <form action="{{route('permisos.destroy',$item)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
-                        @csrf()
-                        @method('DELETE')
-                        <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </form>
-                </div>
-
+                <a href="{{route('permisos.edit',$item)}}" class="btn btn-secondary"><i class="fas fa-pencil-alt"></i></a>
+                <form class="btn-group" action="{{route('permisos.destroy',$item)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
+                    @csrf()
+                    @method('DELETE')
+                    <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </form>
             </div>
 
 
