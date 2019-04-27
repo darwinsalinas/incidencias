@@ -68,6 +68,7 @@ Route::post('tipoIncidencias/{tipo}', 'TipoIncidenciaController@create');
 Route::delete('tipoIncidencias/{tipo}', 'TipoIncidenciaController@destroy');
 Route::get('perfiles', 'PerfilController@index');
 
+
 Route::get('roles/create', function () {
     return view('roles/create');
 });
@@ -75,6 +76,11 @@ Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
 
 
 
+
 Route::resource('roles', 'RolesController');
 Route::resource('permisos', 'PermisosController');
 Route::delete('permisos/delete-role/{role}/{permission}', 'PermisosController@deleteRole')->name('permisos.delete.role');
+
+Route::get('conusltasroles', 'consultarolesController@index');
+Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
+
