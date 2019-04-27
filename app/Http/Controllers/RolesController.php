@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use App\User;
 
 class RolesController extends Controller
 {
@@ -51,8 +52,13 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Role $role)
     {
+        // $user = auth()->user()->assignRole($role->name);
+        // $role->givePermissionTo('Registrar Estudiante');
+        $users = User::role($role->name)->get();
+        $permisos = $role->permissions()->get();
+        return view('roles.show', compact('role', 'users', 'permisos'));
     }
 
     /**

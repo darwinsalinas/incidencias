@@ -4,11 +4,11 @@
 @section('content')
 
 <div class="col-sm">
-<form action="{{route('roles.store')}}" method="POST" role="form">
+<form action="{{route('permisos.store')}}" method="POST" role="form">
       @csrf()
-        <legend>Guardar un Rol</legend>
+        <legend>Guardar un Permiso</legend>
 
-        @include('roles.fields')
+        @include('permisos.fields')
 
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
