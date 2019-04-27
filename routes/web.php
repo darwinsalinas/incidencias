@@ -81,6 +81,6 @@ Route::resource('roles', 'RolesController');
 Route::resource('permisos', 'PermisosController');
 Route::delete('permisos/delete-role/{role}/{permission}', 'PermisosController@deleteRole')->name('permisos.delete.role');
 
-Route::get('conusltasroles', 'consultarolesController@index');
+Route::get('consultas-roles', 'ConsultasRoles@index');
+Route::get('consultas-permisos', 'ConsultasPermisos@index');
 Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
-
