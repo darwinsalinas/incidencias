@@ -60,7 +60,6 @@ Route::get('tipoIncidencias/list', 'TipoIncidenciaController@list');
 Route::get('tipoIncidencias/create', function () {
     return view('tipoIncidencias/create');
 });
-
 Route::get('tipoIncidencias', 'TipoIncidenciaController@index');
 Route::get('tipoIncidencias/{tipo}', 'TipoIncidenciaController@show');
 Route::post('tipoIncidencias', 'TipoIncidenciaController@store');
@@ -68,16 +67,14 @@ Route::patch('tipoIncidencias/{tipo}', 'TipoIncidenciaController@update');
 Route::post('tipoIncidencias/{tipo}', 'TipoIncidenciaController@create');
 Route::delete('tipoIncidencias/{tipo}', 'TipoIncidenciaController@destroy');
 Route::get('perfiles', 'PerfilController@index');
-Route::resource('roles', 'RolesController');
-Route::resource('permisos', 'PermisosController');
 
-
-Route::resource('nuevaruta____no', 'PermisosController');
-
-Route::get('roles/list', 'RolController@list');
 Route::get('roles/create', function () {
     return view('roles/create');
 });
-
-
 Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
+
+
+
+Route::resource('roles', 'RolesController');
+Route::resource('permisos', 'PermisosController');
+Route::delete('permisos/delete-role/{role}/{permission}', 'PermisosController@deleteRole')->name('permisos.delete.role');
