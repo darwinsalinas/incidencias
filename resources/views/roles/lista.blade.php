@@ -26,17 +26,14 @@
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="{{route('roles.show', $item->id)}}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
                 <a href="{{route('roles.create')}}" class="btn btn-secondary"><i class="fas fa-plus-circle"></i></a>
-                <a href="{{route('roles.edit',$item)}}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                <div class="btn-group">
-                    <form action="{{route('roles.destroy',$item)}}" method="POST" role="form" id="delete_form_{{$item->id}}">
-                        @csrf()
-                        @method('DELETE')
-                        <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </form>
-                </div>
-
+                <a href="{{route('roles.edit',$item)}}" class="btn btn-secondary"><i class="fas fa-pencil-alt"></i></a>
+                <form action="{{route('roles.destroy',$item)}}" method="POST" class="btn-group" role="form" id="delete_form_{{$item->id}}">
+                    @csrf()
+                    @method('DELETE')
+                    <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$item->id}}').submit();" class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </form>
             </div>
 
 

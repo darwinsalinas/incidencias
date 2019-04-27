@@ -34,16 +34,13 @@
                     <a href="{{route('roles.show', $rol->id)}}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
                     <a href="{{route('roles.create')}}" class="btn btn-secondary"><i class="fas fa-plus-circle"></i></a>
                     <a href="{{route('roles.edit',$rol)}}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                    <div class="btn-group">
-                        <form action="{{route('permisos.delete.role',[$permiso->id, $rol->id])}}" method="POST" role="form" id="delete_form_{{$rol->id}}">
-                            @csrf()
-                            @method('DELETE')
-                            <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$rol->id}}').submit();" class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                            </a>
-                        </form>
-                    </div>
-
+                    <form class="btn-group" action="{{route('permisos.delete.role',[$permiso->id, $rol->id])}}" method="POST" role="form" id="delete_form_{{$rol->id}}">
+                        @csrf()
+                        @method('DELETE')
+                        <a href="javascript:{}" onclick="document.getElementById('delete_form_{{$rol->id}}').submit();" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </form>
                 </div>
             </td>
         </tr>
