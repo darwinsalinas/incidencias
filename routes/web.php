@@ -6,7 +6,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('entidades/edit/{entidad}', 'EntidadController@edit');
-Route::get('entidades/list', 'EntidadController@list');
+Route::get('entidades/list', 'EntidadController@list')->name('entidades.index');
 Route::get('entidades/create','EntidadController@create');
 
 Route::get('entidades', 'EntidadController@index');
