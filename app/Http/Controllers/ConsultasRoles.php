@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
-use App\User;
 
-class RolesController extends Controller
+class ConsultasRoles extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,7 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $rs = Role::all();
-        return view('roles.lista', compact('rs'));
+        //
     }
 
     /**
@@ -26,7 +23,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        return view('roles.create');
+        //
     }
 
     /**
@@ -37,13 +34,7 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'name' => 'required|string'
-        ]);
-
-        $model = Role::create($data);
-
-        return redirect()->route('roles.index');
+        //
     }
 
     /**
@@ -52,13 +43,9 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show($id)
     {
-        // $user = auth()->user()->assignRole($role->name);
-        // $role->givePermissionTo('Registrar Estudiante');
-        $users = User::role($role->name)->get();
-        $permisos = $role->permissions()->get();
-        return view('roles.show', compact('role', 'users', 'permisos'));
+        //
     }
 
     /**
@@ -69,8 +56,7 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        $model = Role::findOrFail($id);
-        return view('roles.editar', ['model' => $model]);
+        //
     }
 
     /**
@@ -82,13 +68,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->validate([
-            'name' => 'required|string'
-        ]);
-        $model = Role::findOrFail($id);
-        $model->name = $data['name'];
-        $model->save();
-        return redirect()->route('roles.index');
+        //
     }
 
     /**
@@ -99,8 +79,6 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
-        $model = Role::findOrFail($id);
-        $model->delete();
-        return redirect()->route('roles.index');
+        //
     }
 }

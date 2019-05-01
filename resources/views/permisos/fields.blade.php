@@ -4,6 +4,6 @@
     }
 @endphp
 <div class="form-group">
-    <label for="">Rol</label>
+    <label for="">Permiso</label>
     <input value="{{$model ? $model->name : ''}}" name="name" type="text" class="form-control" placeholder="Escriba el nombre del rol">
 </div>

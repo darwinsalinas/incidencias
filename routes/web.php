@@ -6,7 +6,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('entidades/edit/{entidad}', 'EntidadController@edit');
-Route::get('entidades/list', 'EntidadController@list');
+Route::get('entidades/list', 'EntidadController@list')->name('entidades.index');
 Route::get('entidades/create','EntidadController@create');
 
 Route::get('entidades', 'EntidadController@index');
@@ -60,7 +60,6 @@ Route::get('tipoIncidencias/list', 'TipoIncidenciaController@list');
 Route::get('tipoIncidencias/create', function () {
     return view('tipoIncidencias/create');
 });
-
 Route::get('tipoIncidencias', 'TipoIncidenciaController@index');
 Route::get('tipoIncidencias/{tipo}', 'TipoIncidenciaController@show');
 Route::post('tipoIncidencias', 'TipoIncidenciaController@store');
@@ -68,19 +67,26 @@ Route::patch('tipoIncidencias/{tipo}', 'TipoIncidenciaController@update');
 Route::post('tipoIncidencias/{tipo}', 'TipoIncidenciaController@create');
 Route::delete('tipoIncidencias/{tipo}', 'TipoIncidenciaController@destroy');
 Route::get('perfiles', 'PerfilController@index');
-Route::resource('roles', 'RolesController');
-Route::resource('permisos', 'PermisosController');
 
 
-Route::resource('nuevaruta____no', 'PermisosController');
-
-Route::get('roles/list', 'RolController@list');
 Route::get('roles/create', function () {
     return view('roles/create');
 });
+Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
 
 
+<<<<<<< HEAD
 Route::get('conusltasroles', 'consultarolesController@index');
 Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
 Route::resource('roles', 'RolesController');
+=======
+>>>>>>> 56ce5a4b3f7c163bb672aadc0db8ad3647fa260a
 
+
+Route::resource('roles', 'RolesController');
+Route::resource('permisos', 'PermisosController');
+Route::delete('permisos/delete-role/{role}/{permission}', 'PermisosController@deleteRole')->name('permisos.delete.role');
+
+Route::get('consultas-roles', 'ConsultasRoles@index');
+Route::get('consultas-permisos', 'ConsultasPermisos@index');
+Route::get('consultas-usuarios', 'ConsultasUsuarios@index');

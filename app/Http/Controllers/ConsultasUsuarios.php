@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class ConsultasUsuarios extends Controller
 {
@@ -11,9 +12,19 @@ class ConsultasUsuarios extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('consultas.usuarios');
+        //dd($request->all());
+        $rs = User::query()
+            ->when($request->name !== null, function ($query) use ($request) {
+                $query->where('name', 'like', "%".$request->name."%");
+            })
+            ->when($request->email !== null, function ($query)  use ($request) {
+                $query->where('email','like', "%".$request->email."%");
+            })
+            ->get();
+
+        return view('consultas.usuarios', compact('rs'));
     }
 
     /**
