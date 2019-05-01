@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<<<<<<< HEAD
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,7 +13,6 @@
             margin-top: 40px;
         }
     </style>
-=======
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
@@ -31,7 +29,6 @@
   <link href="{{asset('css/now-ui-dashboard.css?v=1.3.0')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('css/demo.css')}}" rel="stylesheet" />
->>>>>>> 56ce5a4b3f7c163bb672aadc0db8ad3647fa260a
 </head>
 
 <body class="">
