@@ -107,8 +107,7 @@ class PermisosController extends Controller
 
     public function deleteRole(Role $role, Permission $permission)
     {
-        // dd($role, $permission);
         $permission->removeRole($role);
-        return redirect()->back();
+        return redirect()->route('permisos.show', $permission->id);
     }
 }

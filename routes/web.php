@@ -75,12 +75,14 @@ Route::get('roles/create', function () {
 Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
 
 
+Route::get('conusltasroles', 'consultarolesController@index');
+Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
+Route::resource('roles', 'RolesController');
 
-Route::resource('usuarios', 'UserController');
+
 Route::resource('roles', 'RolesController');
 Route::resource('permisos', 'PermisosController');
-Route::delete('permisos/delete-role/{role}/{permission}', 'PermisosController@deleteRole')
-    ->name('permisos.delete.role');
+Route::delete('permisos/delete-role/{role}/{permission}', 'PermisosController@deleteRole')->name('permisos.delete.role');
 
 Route::get('consultas-roles', 'ConsultasRoles@index');
 Route::get('consultas-permisos', 'ConsultasPermisos@index');

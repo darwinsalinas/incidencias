@@ -54,6 +54,7 @@ class RolesController extends Controller
      */
     public function show(Role $role)
     {
+        //dd("hola");
         // $user = auth()->user()->assignRole($role->name);
         // $role->givePermissionTo('Registrar Estudiante');
         $users = User::role($role->name)->get();
