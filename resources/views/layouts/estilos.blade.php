@@ -55,7 +55,7 @@
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
             </script>, Diseñado por
             <a href="https://incidencias.test" target="_blank">URACCAN</a>. Programado por
-            <a href="https://incidencias.test" target="_blank">Informativa V Año</a>.
+            <a href="https://incidencias.test" target="_blank">Informática V Año</a>.
           </div>
         </div>
       </footer>
