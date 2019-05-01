@@ -75,12 +75,9 @@ Route::get('roles/create', function () {
 Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
 
 
-<<<<<<< HEAD
 Route::get('conusltasroles', 'consultarolesController@index');
 Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
 Route::resource('roles', 'RolesController');
-=======
->>>>>>> 56ce5a4b3f7c163bb672aadc0db8ad3647fa260a
 
 
 Route::resource('roles', 'RolesController');
