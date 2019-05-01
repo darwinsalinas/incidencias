@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <form>
                 <div class="input-group no-border">
-                    <input type="text" value="" class="form-control" placeholder="Buscar...">
+                    <input name="q" type="text" value="" class="form-control" placeholder="Buscar...">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <i class="now-ui-icons ui-1_zoom-bold"></i>
