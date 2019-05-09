@@ -7,7 +7,7 @@
             <div class="card-header">
                  <h4><strong>Rol: </strong>{{$role->name}}</h4>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -17,7 +17,7 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
-                 <h4>Ususarios</h4>
+                 <h4>Usuarios</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -26,7 +26,7 @@
                             <tr>
                              <th>Usuarios</th>
                                 <th class="text-right">
-                                 Permisos
+                                 Usuarios
                                 </th>
                             </tr>
                         </thead>
@@ -51,14 +51,14 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
-                 <h4>Ususarios</h4>
+                 <h4>Permisos</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
-                             <th>Usuarios</th>
+                             <th>Permisos</th>
                                 <th class="text-right">
                                  Opciones
                                 </th>
@@ -72,10 +72,10 @@
                                 </tr>
                                   @endforeach
 
-                                
+
                              </tbody>
 
-                        
+
                             </table>
 
                     </table>
@@ -86,5 +86,5 @@
 </div>
 
 
-            
-    @endsection       
+
+    @endsection
