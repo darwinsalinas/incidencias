@@ -102,6 +102,7 @@ class CargoController extends Controller
 
     public function list()
     {
+        
         $rs = $this->index();
         return view('cargos/lista', ['rs' => $rs]);
     }
