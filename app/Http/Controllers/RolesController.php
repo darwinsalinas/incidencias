@@ -8,6 +8,11 @@ use App\User;
 
 class RolesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['permission:editrole'])
+        ->only(['update', 'destroy']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -83,6 +88,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $data = $request->validate([
             'name' => 'required|string'
         ]);

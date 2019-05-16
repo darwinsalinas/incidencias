@@ -17,4 +17,14 @@ class Perfil extends Model
     {
         return $this->belongsTo(Entidad::class);
     }
+
+    public function cargo()
+    {
+        return $this->belongsTo(Cargo::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

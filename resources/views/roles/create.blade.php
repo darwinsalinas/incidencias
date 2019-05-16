@@ -3,6 +3,7 @@
 
 @section('content')
 
+@include('componentes.errores')
 <div class="col-sm">
 <form action="{{route('roles.store')}}" method="POST" role="form">
       @csrf()
