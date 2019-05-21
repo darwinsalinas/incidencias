@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Incidencia;
 use Illuminate\Http\Request;
 
-class IncidenciaController extends Controller
+class IncidenciasController extends Controller
 {
     /**
      * Display a listing of the resource.

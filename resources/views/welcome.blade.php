@@ -10,7 +10,7 @@
                 <h2 class="card-title">Sistema de incidencias</h2>
                 <p class="card-text">Sistema de de reporte de incidencias desarrollado en Laravel</p>
                 <p class="card-text">Última actualización hace 3 min.</p>
-                <a href="#" class="btn btn-secondary">Reportar Incidencia</a>
+                <a href="{{route('incidencias.create')}}" class="btn btn-secondary">Reportar Incidencia</a>
             </div>
         </div>
     </div>
