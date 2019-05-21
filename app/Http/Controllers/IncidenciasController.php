@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Incidencia;
 use Illuminate\Http\Request;
+use App\Modulo;
+use App\TipoIncidencia;
 
 class IncidenciasController extends Controller
 {
@@ -14,7 +16,8 @@ class IncidenciasController extends Controller
      */
     public function index()
     {
-        //
+        $rs = Incidencia::all();
+        return $rs;
     }
 
     /**
@@ -24,7 +27,10 @@ class IncidenciasController extends Controller
      */
     public function create()
     {
-        //
+        $modulos = Modulo::all();
+        $tipos = TipoIncidencia::all();
+
+        return view('incidencias.create', compact('modulos','tipos'));
     }
 
     /**
@@ -35,7 +41,17 @@ class IncidenciasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'titulo' => 'required|string|max:50',
+            'descripcion' => 'required|string',
+            'modulo_id' => 'required|integer',
+            'tipo_incidencia_id' => 'required|integer'
+        ]);
+        $data['user_id'] = auth()->user()->id;
+
+        $incidencia = Incidencia::create($data);
+
+        return redirect()->route('incidencias.index');
     }
 
     /**
