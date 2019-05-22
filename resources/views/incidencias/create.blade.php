@@ -4,10 +4,12 @@
 
 @include('componentes.errores')
 
-<div class="row">
-    <div class="col-sm-12">
+
+
+<div class="row"></div>
+    <div class="col-xs-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-dark text-white">
                 <h2>Reportar incidencia</h2>
             </div>
             <div class="card-body">
@@ -20,4 +22,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection

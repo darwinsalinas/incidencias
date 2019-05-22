@@ -16,8 +16,17 @@ class IncidenciasController extends Controller
      */
     public function index()
     {
-        $rs = Incidencia::all();
-        return $rs;
+        $rs = Incidencia::with([
+            'modulo',
+            'tipo',
+            'user'
+        ])
+        ->get();
+
+        if (request()->ajax()) {
+            return $rs;
+        }
+        return view('incidencias.lista', compact('rs'));
     }
 
     /**
@@ -30,7 +39,7 @@ class IncidenciasController extends Controller
         $modulos = Modulo::all();
         $tipos = TipoIncidencia::all();
 
-        return view('incidencias.create', compact('modulos','tipos'));
+        return view('incidencias.create', compact('modulos', 'tipos'));
     }
 
     /**

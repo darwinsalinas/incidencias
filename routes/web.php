@@ -1,15 +1,26 @@
 <?php
-
+use App\Incidencia;
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', function () {
-        return view('welcome');
+        $rs = Incidencia::with([
+            'modulo',
+            'tipo',
+            'user'
+        ])
+        ->orderBy('id', 'DESC')
+        ->take(2)
+        ->get();
+
+        //return view('welcome', compact('rs'));
+        return view('welcome', ['rs' => $rs]);
     });
 
     Route::resource('incidencias', 'IncidenciasController');
 
     Route::get('/home', 'HomeController@index');
-    Route::get('/perfil', 'MiPerfilController@index');
+    Route::get('/perfil', 'MiPerfilController@index')->name('perfil');
+    Route::get('/dashboard', 'MiPerfilController@index')->name('dashboard');
 
     Route::get('entidades/edit/{entidad}', 'EntidadController@edit');
     Route::get('entidades/list', 'EntidadController@list')->name('entidades.index');
