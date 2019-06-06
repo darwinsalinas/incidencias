@@ -1,33 +1,27 @@
 <?php
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Incidencia;
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', function () {
+        $rs = Incidencia::with([
+            'modulo',
+            'tipo',
+            'user'
+        ])
+        ->orderBy('id', 'DESC')
+        ->take(2)
+        ->get();
+
+        //return view('welcome', compact('rs'));
+        return view('welcome', ['rs' => $rs]);
+    });
+
+    Route::resource('incidencias', 'IncidenciasController');
 
     Route::get('/home', 'HomeController@index');
-    Route::get('/perfil', 'MiPerfilController@index');
+    Route::get('/perfil', 'MiPerfilController@index')->name('perfil');
+    Route::get('/dashboard', 'MiPerfilController@index')->name('dashboard');
 
-    Route::group(['middleware' => ['role:SuperAdmin|Registro']], function () {
-        Route::get('roles/create', function () {
-            return view('roles/create');
-        });
-        Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
-
-
-        Route::get('conusltasroles', 'consultarolesController@index');
-        Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
-        Route::resource('roles', 'RolesController');
-
-
-        Route::resource('roles', 'RolesController');
-        Route::resource('permisos', 'PermisosController');
-        Route::delete('permisos/delete-role/{role}/{permission}', 'PermisosController@deleteRole')->name('permisos.delete.role');
-
-        Route::get('consultas-roles', 'ConsultasRoles@index');
-        Route::get('consultas-permisos', 'ConsultasPermisos@index');
-        Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
-    });
     Route::get('entidades/edit/{entidad}', 'EntidadController@edit');
     Route::get('entidades/list', 'EntidadController@list')->name('entidades.index');
     Route::get('entidades/create', 'EntidadController@create');
@@ -90,6 +84,22 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('tipoIncidencias/{tipo}', 'TipoIncidenciaController@create');
     Route::delete('tipoIncidencias/{tipo}', 'TipoIncidenciaController@destroy');
     Route::get('perfiles', 'PerfilController@index');
+
+
+    Route::group(['middleware' => ['role:SuperAdmin|Registro']], function () {
+        Route::get('roles/create', function () {
+            return view('roles/create');
+        });
+        Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
+
+        Route::resource('roles', 'RolesController');
+        Route::resource('permisos', 'PermisosController');
+        Route::delete('permisos/delete-role/{role}/{permission}', 'PermisosController@deleteRole')->name('permisos.delete.role');
+
+        Route::get('consultas-roles', 'ConsultasRoles@index');
+        Route::get('consultas-permisos', 'ConsultasPermisos@index');
+        Route::get('consultas-usuarios', 'ConsultasUsuarios@index');
+    });
 
 });
 
