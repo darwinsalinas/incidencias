@@ -43,6 +43,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+
         $data = $request->all();
         $rule = [
             'email' => 'required|email|max:255',
